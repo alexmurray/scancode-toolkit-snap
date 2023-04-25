@@ -5,6 +5,10 @@ summary: ScanCode toolkit
 description: |
   ScanCode detects licenses, copyrights, dependencies by "scanning code" ... to
   discover and inventory open source and third-party packages used in your code.
+license: Apache-2.0
+
+source-code: https://github.com/alexmurray/scancode-toolkit-snap.git
+issues: https://github.com/alexmurray/scancode-toolkit-snap/issues
 
 grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: strict
