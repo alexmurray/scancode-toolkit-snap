@@ -1,0 +1,52 @@
+name: scancode-toolkit
+base: core20
+version: v31.2.5
+summary: ScanCode toolkit
+description: |
+  ScanCode detects licenses, copyrights, dependencies by "scanning code" ... to
+  discover and inventory open source and third-party packages used in your code.
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: strict
+
+apps:
+  scancode:
+    command: bin/snapcraft-preload $SNAP/scancode
+    environment:
+      LC_ALL: C
+    plugs:
+      - home
+  extractcode:
+    command: bin/snapcraft-preload $SNAP/extractcode
+    environment:
+      LC_ALL: C
+    plugs:
+      - home
+
+parts:
+  scancode-toolkit:
+    plugin: dump
+    source: https://github.com/nexB/scancode-toolkit/releases/download/$SNAPCRAFT_PROJECT_VERSION/scancode-toolkit-$SNAPCRAFT_PROJECT_VERSION_py3.8-linux.tar.gz
+    build-packages:
+      - wget
+      - python3
+      - python3-distutils
+    override-build: |
+      snapcraftctl build
+      # configure venv etc
+      $SNAPCRAFT_PART_BUILD/configure
+      for f in $(grep -l $SNAPCRAFT_PART_BUILD $SNAPCRAFT_PART_BUILD/venv/bin/*); do sed -i "s|$SNAPCRAFT_PART_BUILD|/snap/scancode-toolkit/current|" $f; done
+      cp -a $SNAPCRAFT_PART_BUILD/venv $SNAPCRAFT_PART_INSTALL
+    stage-packages:
+      - python3
+      - libgomp1
+
+  snapcraft-preload:
+    source: https://github.com/sergiusens/snapcraft-preload.git
+    plugin: cmake
+    cmake-parameters:
+      - -DCMAKE_INSTALL_PREFIX=/
+    build-packages:
+      - on amd64:
+          - gcc-multilib
+          - g++-multilib
