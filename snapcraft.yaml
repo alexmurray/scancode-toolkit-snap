@@ -34,14 +34,14 @@ parts:
     build-packages:
       - libxml2-dev
       - libxslt1-dev
-      - wget
       - python3
       - python3-distutils
+      - wget
     stage-packages:
-      - python3
       - libgomp1
-      - libxslt1
       - libxml2
+      - libxslt1.1
+      - python3
     override-build: |
       snapcraftctl build
       # configure venv etc
