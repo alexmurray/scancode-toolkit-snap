@@ -10,7 +10,7 @@ license: Apache-2.0
 source-code: https://github.com/alexmurray/scancode-toolkit-snap.git
 issues: https://github.com/alexmurray/scancode-toolkit-snap/issues
 
-grade: devel # must be 'stable' to release into candidate/stable channels
+grade: stable
 confinement: strict
 
 apps:
