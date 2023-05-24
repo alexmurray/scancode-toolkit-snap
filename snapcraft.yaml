@@ -27,7 +27,7 @@ apps:
     plugs:
       - home
   license-data:
-    command: bin/snapcraft-preload $SNAP/scancode-license-data
+    command: bin/snapcraft-preload $SNAP/venv/bin/scancode-license-data
     environment:
       LC_ALL: C
     plugs:
