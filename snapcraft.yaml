@@ -1,6 +1,6 @@
 name: scancode-toolkit
 base: core20
-version: v32.0.3
+version: v32.0.4
 summary: ScanCode toolkit
 description: |
   ScanCode detects licenses, copyrights, dependencies by "scanning code" ... to
