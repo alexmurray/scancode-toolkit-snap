@@ -1,6 +1,6 @@
 name: scancode-toolkit
 base: core20
-version: v32.0.4
+version: v32.0.5rc3
 summary: ScanCode toolkit
 description: |
   ScanCode detects licenses, copyrights, dependencies by "scanning code" ... to
@@ -10,7 +10,7 @@ license: Apache-2.0
 source-code: https://github.com/alexmurray/scancode-toolkit-snap.git
 issues: https://github.com/alexmurray/scancode-toolkit-snap/issues
 
-grade: stable
+grade: devel
 confinement: strict
 
 apps:
