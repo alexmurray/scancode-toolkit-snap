@@ -36,7 +36,7 @@ apps:
 parts:
   scancode-toolkit:
     plugin: dump
-    source: https://github.com/aboutcode-org/scancode-toolkit/releases/download/$SNAPCRAFT_PROJECT_VERSION/scancode-toolkit-$SNAPCRAFT_PROJECT_VERSION_py3.12-linux.tar.gz
+    source: https://github.com/aboutcode-org/scancode-toolkit/releases/download/$CRAFT_PROJECT_VERSION/scancode-toolkit-$SNAPCRAFT_PROJECT_VERSION_py3.12-linux.tar.gz
     build-packages:
       - libxml2-dev
       - libxslt1-dev
